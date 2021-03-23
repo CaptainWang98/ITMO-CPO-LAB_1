@@ -85,3 +85,6 @@ For details, see the comments in mutable.py.
 
 ## CONCLUSION
 
+For this lab, we have implement the hashMap and deal with collision by open address strategy.
+
+And we also learn how to collerbrate with each other by git and GitHub.
