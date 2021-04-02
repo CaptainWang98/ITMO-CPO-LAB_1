@@ -36,7 +36,7 @@ class TestMutableHashMapMethods(TestMutableHashMap):
     self.assertEqual(self.hashMap.data[5], None)
     self.assertEqual(self.hashMap.add("String"), False)
 
-  def test_remore(self):
+  def test_remove(self):
     self.hashMap.add(0)
     self.assertEqual(self.hashMap.data[0], 0)
     self.hashMap.remove(0)

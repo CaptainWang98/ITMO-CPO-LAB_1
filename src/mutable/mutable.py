@@ -6,7 +6,7 @@ class HashMap(object):
     self.allocate_memory(size)
 
   '''
-  @discription:
+  @description:
     when the memory is not enough, use this method to allocate new memory
     rehash old values, and set new length property
   @args:
@@ -39,7 +39,7 @@ class HashMap(object):
 
 
   '''
-  @discription:
+  @description:
     add new value to HashMap, and handle collision
   @args:
     value: int
@@ -68,8 +68,8 @@ class HashMap(object):
 
 
   '''
-  @discription:
-    remore existing value from HashMap
+  @description:
+    remove existing value from HashMap
   @args:
     value: int
   @return:
@@ -93,7 +93,7 @@ class HashMap(object):
       return False
 
   '''
-  @discription:
+  @description:
     get the size of HashMap
   @args:
     None
@@ -104,7 +104,7 @@ class HashMap(object):
     return self.len
 
   '''
-  @discription:
+  @description:
     reverse a HashMap does not make sence...
   @args:
     None
@@ -115,7 +115,7 @@ class HashMap(object):
     pass
 
   '''
-  @discription:
+  @description:
     form a HashMap from a list
   @args:
     alist: list
@@ -129,7 +129,7 @@ class HashMap(object):
       self.add(i)
 
   '''
-  @discription:
+  @description:
     get a list formed by HashMap values
   @args:
     None
@@ -140,7 +140,7 @@ class HashMap(object):
     return self.data[:]
 
   '''
-  @discription:
+  @description:
     find if the HashMap contain the value
   @args:
     value: int
@@ -156,11 +156,11 @@ class HashMap(object):
     return False
 
   '''
-  @discription:
+  @description:
     get a list fromed by values which meet the conditions
   @args:
     func: function
-    @discription: a function to test if the item in HashMap meet the conditions
+    @description: a function to test if the item in HashMap meet the conditions
     @args: item-one of the item in HashMap
     @return:
       if item meets the condition, return True
@@ -177,7 +177,7 @@ class HashMap(object):
     return res
 
   '''
-  @discription:
+  @description:
     get a list formed by items in HashMap which processed by a function
   @args:
     func: function
@@ -194,7 +194,7 @@ class HashMap(object):
     return res
 
   '''
-  @discription:
+  @description:
     process each value in HashMap and return a acculumator
   @args:
     func: function

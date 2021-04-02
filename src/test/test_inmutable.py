@@ -2,8 +2,8 @@ import unittest
 from hypothesis import given
 import hypothesis.strategies as st
 import sys
-sys.path.append("/Users/cptw98/Desktop/CPO/my_lab1/src/inmutable")
-from inmutable import *
+sys.path.append("/Users/cptw98/Desktop/CPO/my_lab1/src/immutable")
+from immutable import *
 
 class TestMutableHashMap(unittest.TestCase):
   def setUp(self):
@@ -36,7 +36,7 @@ class TestMutableHashMapMethods(TestMutableHashMap):
     self.assertEqual(self.hashMap.data[5], None)
     self.assertEqual(add(self.hashMap, "String"), False)
 
-  def test_remore(self):
+  def test_remove(self):
     add(self.hashMap, 0)
     self.assertEqual(self.hashMap.data[0], 0)
     remove(self.hashMap, 0)
