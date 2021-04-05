@@ -1,4 +1,4 @@
-from mutable import HashMap
+from mutable.mutable import HashMap
 
 class Set(object):
   def __init__(self, size = 0):

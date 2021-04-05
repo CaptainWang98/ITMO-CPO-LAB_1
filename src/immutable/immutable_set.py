@@ -1,4 +1,4 @@
-from immutable import HashMap
+from immutable.immutable import HashMap
 
 class Set(object):
   def __init__(self, size = 0):

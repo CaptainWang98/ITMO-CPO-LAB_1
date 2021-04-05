@@ -1,8 +1,8 @@
 import unittest
 from hypothesis import given, note, strategies as st
 import sys
-sys.path.append("/Users/cptw98/Desktop/CPO/ITMO-CPO-LAB_1/src/immutable")
-from immutable_set import Set, add, remove, size, from_list, to_list, has, set_filter, set_map, set_reduce, monoid_add
+sys.path.append("..")
+from immutable.immutable_set import Set, add, remove, size, from_list, to_list, has, set_filter, set_map, set_reduce, monoid_add
 
 class TestMutableSet(unittest.TestCase):
   def setUp(self):

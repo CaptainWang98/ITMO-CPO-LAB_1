@@ -1,8 +1,8 @@
 import unittest
 from hypothesis import given, note, strategies as st
 import sys
-sys.path.append("/Users/cptw98/Desktop/CPO/ITMO-CPO-LAB_1/src/mutable")
-from mutable_set import Set
+sys.path.append("..")
+from mutable.mutable_set import Set
 
 class TestMutableSet(unittest.TestCase):
   def setUp(self):
