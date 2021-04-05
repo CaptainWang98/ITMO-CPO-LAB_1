@@ -61,7 +61,7 @@ class HashMap(object):
           self.data[index] = value
           flag = False
         index += 1
-      # can not find, then allocate memory and store new value
+      # can not has, then allocate memory and store new value
       if flag and (index >= self.len):
         self.allocate_memory(self.len)
         self.add(value)
@@ -141,13 +141,13 @@ class HashMap(object):
 
   '''
   @description:
-    find if the HashMap contain the value
+    has if the HashMap contain the value
   @args:
     value: int
   @return:
     type: Boolean
   '''
-  def find(self, value):
+  def has(self, value):
     index = value % self.len
     while index < self.len:
       if self.data[index] == value:
@@ -222,3 +222,46 @@ class HashMap(object):
         raise StopIteration
     else:
       raise StopIteration
+
+class Set(object):
+  def __init__(self, size):
+    self.data = []
+    self.hashmap = HashMap(size)
+  
+  def add(self, value):
+    if self.hashmap.has(value):
+      return False
+    else:
+      self.data.append(value)
+      self.hashmap.add(value)
+
+  def remove(self, value):
+    if self.hashmap.remove(value):
+      self.data.remove(value)
+
+  def size(self):
+    return self.hashmap.size()
+
+  def from_list(self, alist):
+    for i in alist:
+      if type(i) == int and not self.hashmap.has(i):
+        self.data.append(i)
+        self.hashmap.add(i)
+
+  def to_list(self):
+    return self.data.copy()
+
+  def filter(self, func):
+    return self.hashmap.filter(func)
+
+  def map(self, func):
+    return self.hashmap.map(func)
+
+  def hash_reduce(self, func, initial):
+    return self.hashmap.hash_reduce(func, initial)
+
+  def __iter__(self):
+    return self.hashmap
+
+  def __next__(self):
+    return self.hashmap.__next__()
