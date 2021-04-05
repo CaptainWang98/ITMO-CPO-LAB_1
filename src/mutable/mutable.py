@@ -22,17 +22,18 @@ class HashMap(object):
       new_data.append(None)
     # rehash
     for i in self.data:
-      index = i % new_len
-      if not (i == None):
-        if new_data[index] == None:
-          new_data[index] = i
-        else:
-          flag = True
-          while flag:
-            index += 1
-            if new_data[index] == None:
-              new_data[index] = i
-            flag = False
+      if not i == None:
+        index = i % new_len
+        if not (i == None):
+          if new_data[index] == None:
+            new_data[index] = i
+          else:
+            flag = True
+            while flag:
+              index += 1
+              if new_data[index] == None:
+                new_data[index] = i
+              flag = False
     # set new properties
     self.data = new_data
     self.len = new_len
@@ -49,6 +50,8 @@ class HashMap(object):
   def add(self, value):
     if not type(value) == int:
       return False
+    if self.len == 0:
+      self.allocate_memory(3)
     index = value % self.len
     if self.data[index] == None:
       self.data[index] = value
@@ -148,6 +151,8 @@ class HashMap(object):
     type: Boolean
   '''
   def has(self, value):
+    if self.len == 0:
+      return False
     index = value % self.len
     while index < self.len:
       if self.data[index] == value:
@@ -212,8 +217,8 @@ class HashMap(object):
     return self
 
   def __next__(self):
-    if self.size > 0:
-      if self.__curr__ < self.size:
+    if self.size() > 0:
+      if self.__curr__ < self.size():
         tmp = self.data[self.__curr__]
         self.__curr__ += 1
         return tmp
@@ -222,46 +227,3 @@ class HashMap(object):
         raise StopIteration
     else:
       raise StopIteration
-
-class Set(object):
-  def __init__(self, size):
-    self.data = []
-    self.hashmap = HashMap(size)
-  
-  def add(self, value):
-    if self.hashmap.has(value):
-      return False
-    else:
-      self.data.append(value)
-      self.hashmap.add(value)
-
-  def remove(self, value):
-    if self.hashmap.remove(value):
-      self.data.remove(value)
-
-  def size(self):
-    return self.hashmap.size()
-
-  def from_list(self, alist):
-    for i in alist:
-      if type(i) == int and not self.hashmap.has(i):
-        self.data.append(i)
-        self.hashmap.add(i)
-
-  def to_list(self):
-    return self.data.copy()
-
-  def filter(self, func):
-    return self.hashmap.filter(func)
-
-  def map(self, func):
-    return self.hashmap.map(func)
-
-  def hash_reduce(self, func, initial):
-    return self.hashmap.hash_reduce(func, initial)
-
-  def __iter__(self):
-    return self.hashmap
-
-  def __next__(self):
-    return self.hashmap.__next__()
