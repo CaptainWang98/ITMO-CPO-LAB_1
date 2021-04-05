@@ -2,7 +2,7 @@ import unittest
 from hypothesis import given
 import hypothesis.strategies as st
 import sys
-sys.path.append("/Users/cptw98/Desktop/CPO/my_lab1/src/immutable")
+sys.path.append("/Users/cptw98/Desktop/CPO/ITMO-CPO-LAB_1/src/immutable")
 from immutable import *
 
 class TestMutableHashMap(unittest.TestCase):
@@ -62,11 +62,11 @@ class TestMutableHashMapMethods(TestMutableHashMap):
     self.assertEqual(to_list(self.hashMap), alist)
     self.assertEqual(size(self.hashMap), 6)
 
-  def test_find(self):
+  def test_has(self):
     alist = [0, 1, 2, 3, 4, 11]
     from_list(self.hashMap, alist)
-    self.assertEqual(find(self.hashMap, 11), True)
-    self.assertEqual(find(self.hashMap, 9), False)
+    self.assertEqual(has(self.hashMap, 11), True)
+    self.assertEqual(has(self.hashMap, 9), False)
 
   def test_filter(self):
     alist = [0, 1, 2, 3, 4, 11]
